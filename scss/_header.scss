@@ -9,6 +9,7 @@
   border-bottom: 1px solid var(--stroke);
   background: var(--bg-header);
   backdrop-filter: blur(40px);
+  z-index: 100;
 
   &__inner {
     height: 64px;
@@ -53,11 +54,9 @@
     width: 40px;
     height: 40px;
     border-radius: 12px;
-    background: transparent url(../images/common/theme-light.svg) center
-      no-repeat;
+    background: transparent url(../images/common/theme-light.svg) center no-repeat;
     &:hover {
-      background: var(--bg-gnb-btn-hover)
-        url(../images/common/theme-light-hover.svg) center no-repeat;
+      background: var(--bg-gnb-btn-hover) url(../images/common/theme-light-hover.svg) center no-repeat;
     }
   }
   &__menu-toggle {
@@ -68,8 +67,7 @@
     border-radius: 12px;
     background: transparent url(../images/common/gnb-light.svg) center no-repeat;
     &:hover {
-      background: var(--bg-gnb-btn-hover)
-        url(../images/common/gnb-light-hover.svg) center no-repeat;
+      background: var(--bg-gnb-btn-hover) url(../images/common/gnb-light-hover.svg) center no-repeat;
     }
   }
 }
@@ -78,25 +76,21 @@
   .header__theme-toggle {
     background: url(../images/common/theme-dark.svg) center no-repeat;
     &:hover {
-      background: var(--bg-gnb-btn-hover)
-        url(../images/common/theme-dark-hover.svg) center no-repeat;
+      background: var(--bg-gnb-btn-hover) url(../images/common/theme-dark-hover.svg) center no-repeat;
     }
   }
 
   .header__menu-toggle {
     background: transparent url(../images/common/gnb-dark.svg) center no-repeat;
     &:hover {
-      background: var(--bg-gnb-btn-hover)
-        url(../images/common/gnb-dark-hover.svg) center no-repeat;
+      background: var(--bg-gnb-btn-hover) url(../images/common/gnb-dark-hover.svg) center no-repeat;
     }
   }
   .header.is-open {
     .header__menu-toggle {
-      background: transparent url(../images/common/gnb-close-dark.svg) center
-        no-repeat;
+      background: transparent url(../images/common/gnb-close-dark.svg) center no-repeat;
       &:hover {
-        background: var(--bg-gnb-btn-hover)
-          url(../images/common/gnb-close-dark-hover.svg) center no-repeat;
+        background: var(--bg-gnb-btn-hover) url(../images/common/gnb-close-dark-hover.svg) center no-repeat;
       }
     }
   }
@@ -154,11 +148,9 @@
       height: 100vh;
       border: none;
       .header__menu-toggle {
-        background: transparent url(../images/common/gnb-close-light.svg) center
-          no-repeat;
+        background: transparent url(../images/common/gnb-close-light.svg) center no-repeat;
         &:hover {
-          background: var(--bg-gnb-btn-hover)
-            url(../images/common/gnb-close-light-hover.svg) center no-repeat;
+          background: var(--bg-gnb-btn-hover) url(../images/common/gnb-close-light-hover.svg) center no-repeat;
         }
       }
 
