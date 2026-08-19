@@ -1,0 +1,190 @@
+@use "variables" as *;
+
+.header {
+  transition: height 0.3s;
+  width: 100%;
+  height: 64px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-bottom: 1px solid var(--stroke);
+  background: var(--bg-header);
+  backdrop-filter: blur(40px);
+
+  &__inner {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 64px;
+  }
+  &__logo {
+    font-size: 24px;
+    line-height: 64px;
+    color: var(--text-gnb-logo);
+  }
+  &__nav {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__nav-list {
+    display: flex;
+    gap: 16px;
+    color: var(--text-gnb-btn);
+    font-family: "Montserrat", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+
+    li {
+      line-height: 36px;
+      padding: 0 12px;
+      border-radius: 13px;
+      &:hover {
+        color: var(--text-gnb-btn-hover);
+        background-color: var(--bg-gnb-btn-hover);
+      }
+    }
+  }
+  &__actions {
+    display: flex;
+  }
+  &__theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: transparent url(../images/common/theme-light.svg) center
+      no-repeat;
+    &:hover {
+      background: var(--bg-gnb-btn-hover)
+        url(../images/common/theme-light-hover.svg) center no-repeat;
+    }
+  }
+  &__menu-toggle {
+    display: none;
+    width: 36px;
+    height: 36px;
+    position: relative;
+    border-radius: 12px;
+    background: transparent url(../images/common/gnb-light.svg) center no-repeat;
+    &:hover {
+      background: var(--bg-gnb-btn-hover)
+        url(../images/common/gnb-light-hover.svg) center no-repeat;
+    }
+  }
+}
+
+[data-theme="dark"] {
+  .header__theme-toggle {
+    background: url(../images/common/theme-dark.svg) center no-repeat;
+    &:hover {
+      background: var(--bg-gnb-btn-hover)
+        url(../images/common/theme-dark-hover.svg) center no-repeat;
+    }
+  }
+
+  .header__menu-toggle {
+    background: transparent url(../images/common/gnb-dark.svg) center no-repeat;
+    &:hover {
+      background: var(--bg-gnb-btn-hover)
+        url(../images/common/gnb-dark-hover.svg) center no-repeat;
+    }
+  }
+  .header.is-open {
+    .header__menu-toggle {
+      background: transparent url(../images/common/gnb-close-dark.svg) center
+        no-repeat;
+      &:hover {
+        background: var(--bg-gnb-btn-hover)
+          url(../images/common/gnb-close-dark-hover.svg) center no-repeat;
+      }
+    }
+  }
+}
+@media (max-width: $tablet) {
+  .header {
+    &__inner {
+      padding: 0 40px;
+    }
+    &__logo {
+      font-size: 21px;
+    }
+    &__nav {
+      position: static;
+      left: auto;
+      transform: none;
+    }
+    &__nav-list {
+      gap: 8px;
+    }
+  }
+}
+
+@media (max-width: $mobile) {
+  .header {
+    height: 48px;
+    &__inner {
+      padding: 0 24px;
+      height: 48px;
+    }
+    &__logo {
+      font-size: 18px;
+    }
+    &__nav {
+      display: none;
+      position: static;
+      left: auto;
+      transform: none;
+      gap: 12px;
+    }
+    &__theme-toggle {
+      width: 36px;
+      height: 36px;
+      background-size: 24px 24px;
+      &:hover {
+        background-size: 24px 24px;
+      }
+    }
+    &__menu-toggle {
+      display: block;
+    }
+
+    &.is-open {
+      height: 100vh;
+      border: none;
+      .header__menu-toggle {
+        background: transparent url(../images/common/gnb-close-light.svg) center
+          no-repeat;
+        &:hover {
+          background: var(--bg-gnb-btn-hover)
+            url(../images/common/gnb-close-light-hover.svg) center no-repeat;
+        }
+      }
+
+      .header__nav {
+        display: block;
+        width: 100vw;
+        height: calc(100vh - 48px);
+        position: absolute;
+        left: 0;
+        top: 48px;
+      }
+      .header__nav-list {
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        gap: 16px;
+        li {
+          line-height: 64px;
+          border-radius: 0;
+          transition: letter-spacing 0.3s;
+          &:hover {
+            letter-spacing: 8px;
+          }
+        }
+      }
+    }
+  }
+}
