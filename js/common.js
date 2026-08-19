@@ -16,14 +16,14 @@ $(document).ready(function () {
 
       $(".hero__visual img").attr("src", "./images/main/hero.svg");
       $(".hero__scroll img").attr("src", "./images/main/scroll-arrow.svg");
-      $(".detail_bt img").attr("src", "/images/common/detail-arrow.svg");
+      $(".detail-bt img").attr("src", "/images/common/detail-arrow.svg");
     } else {
       $("html").attr("data-theme", "dark");
       localStorage.setItem("theme", "dark");
 
       $(".hero__visual img").attr("src", "./images/main/hero-dark.svg");
       $(".hero__scroll img").attr("src", "./images/main/scroll-arrow-dark.svg");
-      $(".detail_bt img").attr("src", "/images/common/detail-arrow-dark.svg");
+      $(".detail-bt img").attr("src", "/images/common/detail-arrow-dark.svg");
     }
   });
 
