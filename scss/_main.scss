@@ -14,6 +14,16 @@
     width: calc(100vw - 80px);
   }
 }
+@media (max-width: $mobile) {
+  .inner {
+    width: calc(100vw - 64px);
+  }
+}
+@media (max-width: 400px) {
+  .inner {
+    width: calc(100vw - 48px);
+  }
+}
 
 .section-title {
   color: var(--text-section-title);
@@ -125,11 +135,8 @@
     }
     &__greeting {
       font-size: 18px;
-      line-height: 28px;
+      line-height: 36px;
       margin-bottom: 80px;
-      span {
-        margin-bottom: 20px;
-      }
     }
     &__scroll {
       height: 44px;
@@ -152,6 +159,19 @@
 
     50% {
       margin-bottom: 12px;
+    }
+  }
+}
+@media (max-width: 600px) {
+  .hero {
+    &__greeting {
+      line-height: 28px;
+      span {
+        margin-bottom: 20px;
+      }
+    }
+    .mobile-br {
+      display: block;
     }
   }
 }
@@ -308,6 +328,17 @@
     .inner {
       gap: 60px;
     }
+
+    .about__history-note {
+      display: none;
+    }
+    .mobile-br {
+      display: block;
+    }
+  }
+}
+@media (max-width: 625px) {
+  .about {
     &__content {
       gap: 24px;
     }
@@ -319,7 +350,6 @@
       font-size: 16px;
       line-height: 32px;
     }
-
     &__history {
       padding: 0;
       gap: 60px;
@@ -349,9 +379,159 @@
         line-height: 24px;
         display: block;
       }
-      .about__history-note {
-        display: none;
+    }
+  }
+}
+// ===================================
+// skills
+// ===================================
+.skills {
+  padding: 200px 0;
+  display: flex;
+  justify-content: center;
+  //격자 패턴
+  background-color: var(--bg-skills);
+  background-image:
+    radial-gradient(circle, var(--bg-dot) 0.5px, transparent 0.5px),
+    radial-gradient(circle, var(--bg-dot) 0.5px, transparent 0.5px);
+  background-size:
+    9px 63px,
+    63px 9px;
+  background-repeat: repeat;
+  //격자 패턴
+  &__content {
+    width: 100%;
+    padding: 48px;
+    border-radius: 13px;
+    border: 1px solid var(--stroke);
+    background-color: var(--bg-text-panel);
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    text-align: center;
+    .divider {
+      width: 540px;
+      height: 1px;
+      margin: 0;
+      border: 0;
+      background-color: var(--stroke);
+    }
+  }
+  &__item {
+    dt {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      font-size: 24px;
+      line-height: 24px;
+      font-weight: 600;
+      color: var(--text-skills-dt);
+      margin-bottom: 32px;
+    }
+    dd {
+      span {
+        display: block;
+        font-size: 18px;
+        line-height: 32px;
+        font-weight: 400;
+        color: var(--text-skills-dd);
       }
+    }
+  }
+  &__tools {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 31px;
+  }
+}
+@media (max-width: $tablet) {
+  .skills {
+    &__item {
+      dt {
+        font-size: 22px;
+        line-height: 22px;
+        margin-bottom: 28px;
+      }
+      dd {
+        display: flex;
+        flex-direction: column;
+
+        span {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+}
+@media (max-width: $mobile) {
+  .skills {
+    padding: 160px 0;
+    .inner {
+      gap: 60px;
+    }
+    &__content {
+      padding: 32px;
+      gap: 32px;
+    }
+    &__item {
+      .mobile-br {
+        display: block;
+      }
+      dd {
+        gap: 24px;
+      }
+    }
+    &__tools {
+      width: 100%;
+      gap: 0;
+      justify-content: space-between;
+      li {
+        flex: 1;
+      }
+      img {
+        width: 28px;
+      }
+    }
+    .divider {
+      width: 80%;
+    }
+  }
+}
+@media (max-width: 400px) {
+  .skills {
+    &__content {
+      padding: 0;
+      border-radius: 0;
+      background-color: transparent;
+      border: none;
+    }
+    &__item {
+      width: 100%;
+      text-align-last: left;
+      dt {
+        font-size: 20px;
+        line-height: 20px;
+        margin-bottom: 24px;
+      }
+      dd {
+        width: 100%;
+        gap: 16px;
+        span {
+          display: block;
+          width: 100%;
+          padding: 0 16px;
+          border-left: 4px solid var(--text-contact-divider);
+        }
+      }
+    }
+    &__tools {
+      img {
+        width: 24px;
+      }
+    }
+    .divider {
+      display: none;
     }
   }
 }

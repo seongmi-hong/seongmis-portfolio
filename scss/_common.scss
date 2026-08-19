@@ -1,4 +1,7 @@
 @use "variables" as *;
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "SUIT", sans-serif;
@@ -12,12 +15,6 @@ body {
 
 .mobile-br {
   display: none;
-}
-
-@media (max-width: $mobile) {
-  .mobile-br {
-    display: block;
-  }
 }
 
 .detail-bt {
