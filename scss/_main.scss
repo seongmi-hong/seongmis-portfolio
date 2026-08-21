@@ -12,11 +12,13 @@
 @media (max-width: 1440px) {
   .inner {
     width: calc(100vw - 80px);
+    gap: 72px;
   }
 }
 @media (max-width: $mobile) {
   .inner {
     width: calc(100vw - 64px);
+    gap: 60px;
   }
 }
 @media (max-width: 400px) {
@@ -282,9 +284,6 @@
 }
 @media (max-width: $tablet) {
   .about {
-    .inner {
-      gap: 72px;
-    }
     &__content {
       gap: 40px;
     }
@@ -325,9 +324,6 @@
 @media (max-width: $mobile) {
   .about {
     padding: 160px 0;
-    .inner {
-      gap: 60px;
-    }
 
     .about__history-note {
       display: none;
@@ -467,9 +463,6 @@
 @media (max-width: $mobile) {
   .skills {
     padding: 160px 0;
-    .inner {
-      gap: 60px;
-    }
     &__content {
       padding: 32px;
       gap: 32px;
@@ -532,6 +525,163 @@
     }
     .divider {
       display: none;
+    }
+  }
+}
+// ===================================
+// projects
+// ===================================
+.projects {
+  padding: 200px 0;
+  display: flex;
+  justify-content: center;
+  //격자 패턴
+  background-color: var(--bg-projects);
+  background-image:
+    linear-gradient(to right, var(--bg-check) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-check) 1px, transparent 1px);
+  background-size: 16px 16px;
+  //격자 패턴
+
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    width: 100%;
+    li {
+      flex: 1;
+      min-width: 0;
+      position: relative;
+      isolation: isolate;
+      &::before {
+        transition: background-color 0.3s;
+      }
+      &:nth-child(1):hover::before {
+        background-color: rgba(#e1ecfa, 0.5);
+      }
+      &:nth-child(2):hover::before {
+        background-color: rgba(#f6ebec, 0.5);
+      }
+      &:nth-child(3):hover::before {
+        background-color: rgba(#e8e9f1, 0.5);
+      }
+      &:nth-child(4):hover::before {
+        background-color: rgba(#e5ebed, 0.5);
+      }
+    }
+    li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      border-radius: 20px;
+      margin: -16px;
+      display: block;
+      z-index: -1;
+      pointer-events: none;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      border-radius: 13px;
+      border: 1px solid var(--stroke);
+      margin-bottom: 24px;
+    }
+  }
+  &__info {
+    h3 {
+      font-size: 28px;
+      line-height: 32px;
+      font-weight: 700;
+      color: var(--text-projects-title);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      margin-bottom: 8px;
+    }
+  }
+  &__meta {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 500;
+    color: var(--text-projects-category);
+    margin-bottom: 12px;
+    .duration {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+      color: var(--text-projects-time);
+      margin-left: 8px;
+      &::before {
+        content: "";
+        width: 1px;
+        height: 12px;
+        margin-right: 8px;
+        background-color: var(--stroke);
+        display: inline-block;
+      }
+    }
+  }
+}
+[data-theme="dark"] {
+  .projects {
+    &__content li {
+      &:nth-child(1):hover::before {
+        background-color: rgba(#e1ecfa, 0.2);
+      }
+      &:nth-child(2):hover::before {
+        background-color: rgba(#f6ebec, 0.2);
+      }
+      &:nth-child(3):hover::before {
+        background-color: rgba(#e8e9f1, 0.2);
+      }
+      &:nth-child(4):hover::before {
+        background-color: rgba(#e5ebed, 0.2);
+      }
+    }
+  }
+}
+@media (max-width: 1100px) {
+  .projects {
+    &__content {
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 80px;
+    }
+    &__info {
+      h3 {
+        font-size: 24px;
+        line-height: 28px;
+      }
+    }
+    &__meta {
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+  }
+}
+@media (max-width: $mobile) {
+  .projects {
+    padding: 160px 0;
+  }
+}
+@media (max-width: 600px) {
+  .projects {
+    &__content {
+      grid-template-columns: repeat(1, 1fr);
+      li::before {
+        margin: -12px;
+        border-radius: 18px;
+      }
+      img {
+        margin-bottom: 20px;
+      }
+    }
+    &__meta {
+      font-size: 16px;
+      margin-bottom: 4px;
     }
   }
 }

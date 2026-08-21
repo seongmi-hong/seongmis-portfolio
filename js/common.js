@@ -2,28 +2,38 @@ $(document).ready(function () {
   // 모바일 GNB 메뉴 초기화
   $(".header").removeClass("is-open");
 
+  // 테마 변경 이미지의 기본 src 저장
+  $("[data-dark]").each(function () {
+    $(this).data("default-src", $(this).attr("src"));
+  });
+
   // 저장된 테마 불러오기
   if (localStorage.getItem("theme") === "dark") {
     $("html").attr("data-theme", "dark");
-    $(".hero__visual img").attr("src", "./images/main/hero-dark.svg");
+
+    $("[data-dark]").each(function () {
+      $(this).attr("src", $(this).attr("data-dark"));
+    });
   }
 
   // 테마 전환
   $(".header__theme-toggle").click(function () {
     if ($("html").attr("data-theme") === "dark") {
+      // Light
       $("html").removeAttr("data-theme");
       localStorage.setItem("theme", "light");
 
-      $(".hero__visual img").attr("src", "./images/main/hero.svg");
-      $(".hero__scroll img").attr("src", "./images/main/scroll-arrow.svg");
-      $(".detail-bt img").attr("src", "/images/common/detail-arrow.svg");
+      $("[data-dark]").each(function () {
+        $(this).attr("src", $(this).data("default-src"));
+      });
     } else {
+      // Dark
       $("html").attr("data-theme", "dark");
       localStorage.setItem("theme", "dark");
 
-      $(".hero__visual img").attr("src", "./images/main/hero-dark.svg");
-      $(".hero__scroll img").attr("src", "./images/main/scroll-arrow-dark.svg");
-      $(".detail-bt img").attr("src", "/images/common/detail-arrow-dark.svg");
+      $("[data-dark]").each(function () {
+        $(this).attr("src", $(this).attr("data-dark"));
+      });
     }
   });
 
