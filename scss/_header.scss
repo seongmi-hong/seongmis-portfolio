@@ -39,11 +39,14 @@
 
     li {
       line-height: 36px;
-      padding: 0 12px;
       border-radius: 13px;
       &:hover {
         color: var(--text-gnb-btn-hover);
         background-color: var(--bg-gnb-btn-hover);
+      }
+      a {
+        padding: 0 12px;
+        display: inline-block ;
       }
     }
   }

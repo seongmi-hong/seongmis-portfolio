@@ -8,6 +8,7 @@
     <link rel="icon" type="image/png" href="./favicon_512.png" />
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <script src="./js/common.js"></script>
+    <script src="./js/main.js"></script>
   </head>
   <body>
     <header class="header is-open">
@@ -36,7 +37,7 @@
     </header>
 
     <section class="hero">
-      <h1 class="hero__title">Seongmi's PORTFOLIO</h1>
+      <h1 class="hero__title blind">Seongmi's PORTFOLIO</h1>
       <div class="hero__visual" aria-hidden="true">
         <img src="./images/main/hero.svg" data-dark="./images/main/hero-dark.svg" alt="" />
       </div>
@@ -403,5 +404,29 @@
         </ul>
       </div>
     </section>
+    <div class="contact-area">
+      <div class="inner">
+        <section id="contact" class="contact">
+          <h2 class="section-title">CONTACT</h2>
+          <div class="contact__content">
+            <span class="contact__status">OPEN TO CONNECTIONS</span>
+            <strong class="contact__title"> 함께 일할 사람을 <br />찾고 계신가요?</strong>
+            <p class="contact__description">궁금한 점이 있으시다면 연락 주세요.</p>
+            <hr />
+            <div class="contact__email">
+              <a href="mailto:snmi1201@naver.com">snmi1201@naver.com</a>
+              <button type="button" class="contact__copy">
+                <span class="blind">이메일 주소 복사</span>
+              </button>
+              <span class="contact__copy-message" aria-live="polite"></span>
+            </div>
+          </div>
+        </section>
+        <footer class="footer">
+          <p>© 2026 홍성미 All rights reserved.</p>
+          <p>본 사이트는 포트폴리오 용도로 제작되었습니다.</p>
+        </footer>
+      </div>
+    </div>
   </body>
 </html>

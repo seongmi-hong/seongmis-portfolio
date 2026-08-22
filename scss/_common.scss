@@ -1,10 +1,27 @@
 @use "variables" as *;
 html {
   scroll-behavior: smooth;
+  background-color: var(--bg-hero);
+  scrollbar-color: var(--scrollbar) transparent;
 }
 
 body {
   font-family: "SUIT", sans-serif;
+}
+
+::selection {
+  background-color: var(--text-hero-main-typo);
+  color: var(--bg-projects);
+}
+
+.blind {
+  display: inline-block;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  white-space: nowrap;
+  clip-path: inset(50%);
 }
 
 .mobile-br {

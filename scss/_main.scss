@@ -66,12 +66,6 @@
 
   &__title {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    white-space: nowrap;
-    clip-path: inset(50%);
   }
 
   &__visual {
@@ -691,6 +685,8 @@
 .notes {
   display: flex;
   justify-content: center;
+  width: 100%;
+  overflow: hidden;
   .inner {
     flex-direction: row;
     gap: 0;
@@ -769,6 +765,7 @@
       overflow: hidden;
       -webkit-box-orient: vertical;
       -webkit-line-clamp: 2;
+      line-clamp: 2;
     }
   }
   &__content > li:hover {
@@ -834,6 +831,7 @@
         font-size: 15px;
         line-height: 28px;
         -webkit-line-clamp: 1;
+        line-clamp: 1;
       }
     }
   }
@@ -842,6 +840,189 @@
   .notes {
     .inner {
       width: calc(100vw - 48px);
+    }
+  }
+}
+// ===================================
+// contact, footer
+// ===================================
+.contact-area {
+  padding: 200px 0 60px 0;
+  //격자 패턴
+  background-color: var(--bg-hero);
+  background-image:
+    radial-gradient(circle, var(--bg-dot) 0.5px, transparent 0.5px),
+    radial-gradient(circle, var(--bg-dot) 0.5px, transparent 0.5px);
+  background-size:
+    9px 63px,
+    63px 9px;
+  background-repeat: repeat;
+  //격자 패턴
+  display: flex;
+  justify-content: center;
+  .inner {
+    gap: 200px;
+  }
+}
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  &__content {
+    background-color: var(--bg-contact-card);
+    border-radius: 13px;
+    border: 1px solid var(--stroke);
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+  }
+  &__status {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--text-contact-status);
+    margin-bottom: 24px;
+  }
+  &__title {
+    font-size: 42px;
+    line-height: 64px;
+    color: var(--text-contact-title);
+    margin-bottom: 24px;
+  }
+  &__description {
+    font-size: 20px;
+    line-height: 24px;
+    color: var(--text-contact-description);
+    margin: 0;
+    margin-bottom: 36px;
+  }
+  hr {
+    width: 40px;
+    height: 3px;
+    background-color: var(--text-contact-divider);
+    margin: 0;
+    margin-bottom: 36px;
+    border: 0;
+  }
+  &__email {
+    display: flex;
+    gap: 12px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 26px;
+    line-height: 40px;
+    font-weight: 500;
+    color: var(--text-contact-mail);
+    align-items: center;
+    a:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+  &__copy {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: transparent;
+    background-image: url(../images/main/copy.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid var(--text-contact-btn-copy);
+    &:hover {
+      background-color: var(--text-contact-btn-copy);
+      background-image: url(../images/main/copy-hover.svg);
+    }
+  }
+  &__copy-message {
+    font-size: 18px;
+    line-height: 18px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: var(--bg-notes-list-hover);
+    color: var(--text-notes-title-hover);
+    &:empty {
+      display: none;
+    }
+  }
+}
+[data-theme="dark"] {
+  .contact__copy {
+    background-image: url(../images/main/copy-dark.svg);
+    &:hover {
+      background-image: url(../images/main/copy-dark-hover.svg);
+    }
+  }
+}
+footer {
+  text-align: center;
+  font-size: 14px;
+  line-height: 24px;
+  color: var(--text-footer);
+}
+@media (max-width: $mobile) {
+  .contact {
+    gap: 60px;
+    &__content {
+      padding: 32px;
+    }
+    &__status {
+      font-size: 14px;
+      line-height: 24px;
+      margin-bottom: 20px;
+    }
+    &__title {
+      font-size: 26px;
+      line-height: 40px;
+      margin-bottom: 20px;
+    }
+    &__description {
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 40px;
+    }
+    hr {
+      margin-bottom: 36px;
+    }
+    &__email {
+      font-size: 20px;
+      line-height: 32px;
+      gap: 8px;
+    }
+    &__copy {
+      width: 32px;
+      height: 32px;
+      background-size: 24px 24px;
+      border-radius: 8px;
+      flex-wrap: wrap;
+    }
+    &__copy:hover {
+      background-size: 24px 24px;
+    }
+    &__copy-message {
+      font-size: 14px;
+      padding: 6px;
+    }
+  }
+}
+@media (max-width: 490px) {
+  .contact {
+    &__content {
+      position: relative;
+    }
+    &__copy-message {
+      font-size: 16px;
+      padding: 0;
+      background-color: transparent;
+      position: absolute;
+      left: 0;
+      right: 0;
+      margin: auto;
+      bottom: -40px;
+      width: max-content;
     }
   }
 }
