@@ -1,9 +1,5 @@
 @use "variables" as *;
 html.page-project {
-  background-color: var(--bg-projects);
-}
-
-.project-detail {
   //격자 패턴
   background-color: var(--bg-projects);
   background-image:
@@ -11,6 +7,9 @@ html.page-project {
     linear-gradient(to bottom, var(--bg-check) 1px, transparent 1px);
   background-size: 16px 16px;
   //격자 패턴
+}
+
+.project-detail {
   padding-top: 64px;
   display: flex;
   flex-direction: column;
@@ -34,7 +33,7 @@ html.page-project {
     color: var(--text-projects-back);
     margin: 16px 0 16px 64px;
     span {
-      font-family: "Montserrat", sans-serif;
+      font-family: "Montserrat", "Poppins", "SUIT", "Pretendard", "Noto Sans KR", sans-serif;
       font-optical-sizing: auto;
       font-style: normal;
     }
@@ -148,7 +147,8 @@ html.page-project {
     display: flex;
     flex-direction: column;
     gap: 64px;
-    img {
+    img,
+    video {
       border-radius: 26px;
       border: 1px solid var(--stroke);
     }
@@ -192,6 +192,9 @@ html.page-project {
       padding: 24px 16px;
       display: block;
       color: var(--text-projects-detail-more-projects-link);
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
       &:hover {
         background-color: var(--bg-more-projects-link-hover);
         color: var(--text-projects-detail-more-projects-link-hover);
@@ -228,7 +231,9 @@ html.page-project {
       line-height: 64px;
     }
     &__thumbnail,
-    &__item img {
+    &__item img,
+    &__item video,
+    &__more {
       border-radius: 18px;
     }
   }
@@ -245,6 +250,7 @@ html.page-project {
     }
     &__back {
       margin-left: 24px;
+      font-size: 14px;
     }
   }
 }
@@ -274,11 +280,29 @@ html.page-project {
       line-height: 28px;
     }
     &__thumbnail,
-    &__item img {
+    &__item img,
+    &__item video,
+    &__more {
       border-radius: 12px;
+      .project-detail__back {
+        margin: 12px 0 12px 20px;
+      }
     }
     &__item {
       gap: 48px;
+    }
+    &__more-content {
+      padding: 8px 20px 20px 20px;
+    }
+    &__more-title {
+      font-size: 14px;
+    }
+    &__more-list {
+      font-size: 16px;
+      line-height: 32px;
+      li a {
+        padding: 14px 16px;
+      }
     }
   }
 }

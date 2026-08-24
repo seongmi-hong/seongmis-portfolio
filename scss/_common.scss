@@ -6,7 +6,17 @@ html {
 }
 
 body {
-  font-family: "SUIT", sans-serif;
+  font-family: "SUIT", "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+code {
+  font-family: inherit;
+  line-height: inherit;
+  font-weight: 600;
+  padding: 0 6px;
+  border-radius: 6px;
+  background-color: var(--code-bg);
+  color: var(--code-text);
 }
 
 ::selection {
