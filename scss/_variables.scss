@@ -61,6 +61,24 @@
   --text-projects-detail-eyebrow: #707070;
   --text-projects-detail-body: #4f4f4f;
   --text-about-divider: #d8d8d8;
+  --tag-design-bg: #f6ebf5;
+  --tag-design-text: #662661;
+  --tag-design-span: rgba(102, 38, 97, 0.75);
+  --tag-publishing-bg: #dde9f4;
+  --tag-publishing-text: #1c2a70;
+  --tag-publishing-span: rgba(28, 42, 112, 0.75);
+  --tag-figma-bg: #eeeeee;
+  --tag-figma-text: #2d2d2d;
+  --tag-design-system-bg: #e8efdf;
+  --tag-design-system-text: #273f18;
+  --tag-javascript-bg: #f6f3da;
+  --tag-javascript-text: #573724;
+  --tag-jquery-bg: #d8f4f1;
+  --tag-jquery-text: #154368;
+  --tag-scss-bg: #f5e9ea;
+  --tag-scss-text: #6d2c3c;
+  --tag-websquare-bg: #e9e9ff;
+  --tag-websquare-text: #2d226b;
 }
 
 [data-theme="dark"] {
@@ -97,7 +115,7 @@
   --text-notes-body: #c8c8c8;
   --text-hero-p: #d4d4d4;
   --bg-gnb-btn-hover: rgba(85, 85, 87, 0.3);
-  --text-projects-detail-title: #1d1d1d;
+  --text-projects-detail-title: #ededed;
   --text-notes-title: #ededed;
   --text-projects-detail-eyebrow: #a7a7a7;
   --text-about-name: #fdfdfd;
@@ -125,6 +143,24 @@
   --bg-more-projects: #1a1a1c;
   --text-projects-title: #efefef;
   --stroke: #4d4d4f;
+  --tag-design-bg: #362233;
+  --tag-design-text: rgba(246, 235, 245, 0.85);
+  --tag-design-span: rgba(246, 235, 245, 0.6);
+  --tag-publishing-bg: #1f2540;
+  --tag-publishing-text: rgba(221, 233, 244, 0.85);
+  --tag-publishing-span: rgba(221, 233, 244, 0.6);
+  --tag-figma-bg: #282827;
+  --tag-figma-text: rgba(238, 238, 238, 0.85);
+  --tag-design-system-bg: #232a1d;
+  --tag-design-system-text: rgba(232, 239, 223, 0.85);
+  --tag-javascript-bg: #312721;
+  --tag-javascript-text: rgba(246, 243, 218, 0.85);
+  --tag-jquery-bg: #1d2b35;
+  --tag-jquery-text: rgba(216, 244, 241, 0.85);
+  --tag-scss-bg: #382428;
+  --tag-scss-text: rgba(245, 233, 234, 0.85);
+  --tag-websquare-bg: #292254;
+  --tag-websquare-text: rgba(233, 233, 255, 0.85);
 }
 
 $tablet: 1024px;

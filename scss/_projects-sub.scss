@@ -1,0 +1,284 @@
+@use "variables" as *;
+html.page-project {
+  background-color: var(--bg-projects);
+}
+
+.project-detail {
+  //격자 패턴
+  background-color: var(--bg-projects);
+  background-image:
+    linear-gradient(to right, var(--bg-check) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--bg-check) 1px, transparent 1px);
+  background-size: 16px 16px;
+  //격자 패턴
+  padding-top: 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .inner {
+    padding: 200px 0;
+  }
+  .inner,
+  &__content {
+    gap: 160px;
+  }
+  &__back {
+    align-self: flex-start;
+    font-family: "SUIT", sans-serif;
+    font-feature-settings: "ss18" on;
+    font-weight: 600;
+    display: inline-flex;
+    gap: 8px;
+    font-size: 16px;
+    line-height: 40px;
+    color: var(--text-projects-back);
+    margin: 16px 0 16px 64px;
+    span {
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+      font-style: normal;
+    }
+    &:hover {
+      color: var(--text-projects-back-hover);
+    }
+  }
+  //프로젝트 개요
+  &__overview {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px;
+    align-items: start;
+  }
+  &__thumbnail {
+    border-radius: 26px;
+    border: 1px solid var(--stroke);
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+  &__label {
+    display: inline-block;
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 500;
+    color: var(--text-projects-detail-eyebrow);
+    margin-bottom: 16px;
+  }
+  &__title {
+    font-size: 64px;
+    line-height: 80px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-projects-detail-title);
+  }
+  &__meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 48px;
+    li {
+      padding: 4px 12px;
+      border-radius: 10px;
+      font-size: 14px;
+      line-height: 22px;
+      font-weight: 500;
+
+      span {
+        margin-left: 6px;
+      }
+    }
+    .tag-design {
+      background-color: var(--tag-design-bg);
+      color: var(--tag-design-text);
+      span {
+        color: var(--tag-design-span);
+      }
+    }
+    .tag-publishing {
+      background-color: var(--tag-publishing-bg);
+      color: var(--tag-publishing-text);
+      span {
+        color: var(--tag-publishing-span);
+      }
+    }
+    .tag-figma {
+      background-color: var(--tag-figma-bg);
+      color: var(--tag-figma-text);
+    }
+    .tag-design-system {
+      background-color: var(--tag-design-system-bg);
+      color: var(--tag-design-system-text);
+    }
+    .tag-javascript {
+      background-color: var(--tag-javascript-bg);
+      color: var(--tag-javascript-text);
+    }
+    .tag-jquery {
+      background-color: var(--tag-jquery-bg);
+      color: var(--tag-jquery-text);
+    }
+    .tag-scss {
+      background-color: var(--tag-scss-bg);
+      color: var(--tag-scss-text);
+    }
+    .tag-websquare {
+      background-color: var(--tag-websquare-bg);
+      color: var(--tag-websquare-text);
+    }
+  }
+  &__summary {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 500;
+    color: var(--text-projects-detail-body);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  //프로젝트 상세 내용
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+    img {
+      border-radius: 26px;
+      border: 1px solid var(--stroke);
+    }
+  }
+  &__summary {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  //다른 프로젝트 내비
+  &__more {
+    background-color: var(--bg-projects);
+    border-radius: 26px;
+    border: 1px solid var(--stroke);
+    overflow: hidden;
+    .project-detail__back {
+      margin: 20px 0 20px 32px;
+    }
+  }
+  &__more-content {
+    background-color: var(--bg-more-projects);
+    padding: 32px;
+    border-bottom: 1px solid var(--stroke);
+  }
+  &__more-title {
+    padding: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 32px;
+    color: var(--text-projects-detail-more-projects-title);
+    border-bottom: 2px solid var(--text-projects-detail-more-projects-title);
+  }
+  &__more-list {
+    font-size: 20px;
+    line-height: 32px;
+    font-weight: 600;
+    li {
+      border-bottom: 1px solid var(--stroke);
+    }
+    a {
+      padding: 24px 16px;
+      display: block;
+      color: var(--text-projects-detail-more-projects-link);
+      &:hover {
+        background-color: var(--bg-more-projects-link-hover);
+        color: var(--text-projects-detail-more-projects-link-hover);
+      }
+    }
+  }
+}
+@media (max-width: 1528px) {
+  .project-detail {
+    &__back {
+      margin-left: 40px;
+    }
+  }
+}
+@media (max-width: $tablet) {
+  .project-detail {
+    .inner {
+      padding: 160px 0;
+    }
+    .inner,
+    &__content {
+      gap: 120px;
+    }
+    &__overview {
+      grid-template-columns: 1fr;
+      align-self: center;
+    }
+    &__label {
+      font-size: 22px;
+    }
+
+    &__title {
+      font-size: 48px;
+      line-height: 64px;
+    }
+    &__thumbnail,
+    &__item img {
+      border-radius: 18px;
+    }
+  }
+}
+@media (max-width: $mobile) {
+  .project-detail {
+    padding-top: 48px;
+    .inner {
+      padding: 100px 0;
+    }
+    .inner,
+    &__content {
+      gap: 100px;
+    }
+    &__back {
+      margin-left: 24px;
+    }
+  }
+}
+@media (max-width: 520px) {
+  .project-detail {
+    &__label {
+      font-size: 20px;
+    }
+
+    &__title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+    &__meta {
+      font-size: 12px;
+      line-height: 20px;
+      margin-bottom: 32px;
+      li {
+        font-size: 12px;
+        line-height: 20px;
+        padding: 2px 8px;
+        border-radius: 8px;
+      }
+    }
+    &__summary {
+      font-size: 16px;
+      line-height: 28px;
+    }
+    &__thumbnail,
+    &__item img {
+      border-radius: 12px;
+    }
+    &__item {
+      gap: 48px;
+    }
+  }
+}
