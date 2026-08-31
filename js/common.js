@@ -53,4 +53,25 @@ $(document).ready(function () {
       $(".header").removeClass("is-open");
     }
   });
+
+  //화면 진입 애니메이션
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          $(entry.target).addClass("is-visible");
+        } else {
+          $(entry.target).removeClass("is-visible");
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+    },
+  );
+
+  $(".observe").each(function () {
+    observer.observe(this);
+  });
 });

@@ -1,0 +1,237 @@
+.hero {
+  overflow: clip;
+  &__visual {
+    opacity: 0;
+    transform: translateY(480px);
+  }
+
+  &.is-visible &__visual {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 1.8s ease,
+      transform 0.8s ease;
+  }
+
+  &__greeting > span {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  &.is-visible &__greeting > span {
+    transition:
+      opacity 1.8s ease,
+      transform 0.8s ease;
+  }
+  &.is-visible &__greeting > span:nth-child(1) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+  }
+  &.is-visible &__greeting > span:nth-child(2) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+  }
+  &.is-visible &__greeting > span:nth-child(3) {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.4s;
+  }
+
+  &__scroll {
+    opacity: 0;
+    transform: translateY(80px);
+    transition:
+      opacity 1.8s ease,
+      transform 0.8s ease;
+  }
+  &.is-visible &__scroll {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+  }
+}
+
+// 섹션 타이틀 공통
+.section-title {
+  opacity: 0;
+  transform: translateY(80px);
+}
+.section-title.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 1.8s ease,
+    transform 0.8s ease;
+}
+// 더보기 버튼 공통
+.detail-bt {
+  opacity: 0;
+  transform: translateX(-120px);
+}
+.detail-bt.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+  transition:
+    opacity 1.8s ease,
+    transform 0.8s ease;
+  transition-delay: 0.6s;
+}
+
+.about {
+  &__headline {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  &__description {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+
+  &__headline.is-visible,
+  &__description.is-visible {
+    opacity: 1;
+    transform: translateY(0) translateX(0);
+  }
+  &__headline.is-visible {
+    transition:
+      opacity 1.8s ease,
+      transform 0.8s ease;
+    transition-delay: 0.2s;
+  }
+  &__description.is-visible {
+    transition:
+      opacity 1.8s ease,
+      transform 1.2s ease;
+    transition-delay: 0.4s;
+  }
+}
+
+.about__history,
+.skills__content {
+  section {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+  hr {
+    transform: scaleX(0);
+    transform-origin: center;
+  }
+}
+.about__history.is-visible,
+.skills__content.is-visible {
+  section {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 1.2s ease,
+      transform 0.6s ease;
+  }
+  hr {
+    transform: scaleX(1);
+    transition: transform 0.6s ease;
+    transition-delay: 1.2s;
+  }
+  section:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  section:nth-child(5) {
+    transition-delay: 0.6s;
+  }
+}
+.skills__tools {
+  opacity: 0;
+  transform: translateY(70px);
+}
+.skills__tools.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 1.2s ease,
+    transform 0.6s ease;
+}
+
+.notes__header > p {
+  opacity: 0;
+  transform: translateY(200px);
+}
+.notes__header > p.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 1.2s ease,
+    transform 0.6s ease;
+}
+
+.notes__content > li {
+  opacity: 0;
+  transform: translateX(33vw);
+}
+.notes__content.is-visible {
+  & > li {
+    opacity: 1;
+    transform: translateX(0);
+    transition:
+      opacity 1.2s ease,
+      transform 0.8s ease;
+    &:nth-child(1) {
+      transition-delay: 0.2s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.3s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.4s;
+    }
+    &:nth-child(4) {
+      transition-delay: 0.5s;
+    }
+    &:nth-child(5) {
+      transition-delay: 0.6s;
+    }
+    &:nth-child(6) {
+      transition-delay: 0.7s;
+    }
+    &:nth-child(7) {
+      transition-delay: 0.8s;
+    }
+  }
+}
+
+.contact__content {
+  overflow: hidden;
+  .contact__status,
+  .contact__title,
+  .contact__description,
+  hr,
+  .contact__email {
+    opacity: 0;
+    transform: translateY(120px);
+  }
+}
+
+.contact__content.is-visible {
+  .contact__status,
+  .contact__title,
+  .contact__description,
+  hr,
+  .contact__email {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 1.2s ease,
+      transform 0.6s ease;
+  }
+  .contact__title {
+    transition-delay: 0.2s;
+  }
+  .contact__description {
+    transition-delay: 0.4s;
+  }
+  hr {
+    transition-delay: 0.6s;
+  }
+  .contact__email {
+    transition-delay: 0.8s;
+  }
+}
