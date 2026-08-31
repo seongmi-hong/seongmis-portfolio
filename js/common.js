@@ -55,19 +55,22 @@ $(document).ready(function () {
   });
 
   //화면 진입 애니메이션
-
+  $(".project-detail__item>img").addClass("observe");
+  $(".project-detail__summary").addClass("observe");
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        const ratio = entry.intersectionRatio;
+
+        if (ratio >= 0.25) {
           $(entry.target).addClass("is-visible");
-        } else {
+        } else if (ratio <= 0.01) {
           $(entry.target).removeClass("is-visible");
         }
       });
     },
     {
-      threshold: 0.2,
+      threshold: [0.01, 0.25],
     },
   );
 

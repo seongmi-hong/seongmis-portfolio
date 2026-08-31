@@ -1,3 +1,4 @@
+@use "variables" as *;
 .hero {
   overflow: clip;
   &__visual {
@@ -67,22 +68,18 @@
 // 더보기 버튼 공통
 .detail-bt {
   opacity: 0;
-  transform: translateX(-120px);
+  transform: translateY(120px);
 }
 .detail-bt.is-visible {
   opacity: 1;
-  transform: translateX(0);
+  transform: translateY(0);
   transition:
     opacity 1.8s ease,
     transform 0.8s ease;
-  transition-delay: 0.6s;
 }
 
 .about {
-  &__headline {
-    opacity: 0;
-    transform: translateY(80px);
-  }
+  &__headline,
   &__description {
     opacity: 0;
     transform: translateY(120px);
@@ -97,13 +94,11 @@
     transition:
       opacity 1.8s ease,
       transform 0.8s ease;
-    transition-delay: 0.2s;
   }
   &__description.is-visible {
     transition:
       opacity 1.8s ease,
       transform 1.2s ease;
-    transition-delay: 0.4s;
   }
 }
 
@@ -199,14 +194,16 @@
 }
 
 .contact__content {
-  overflow: hidden;
   .contact__status,
   .contact__title,
   .contact__description,
-  hr,
-  .contact__email {
+  hr {
     opacity: 0;
     transform: translateY(120px);
+  }
+  .contact__email {
+    opacity: 0;
+    transform: translateY(60px);
   }
 }
 
@@ -234,4 +231,114 @@
   .contact__email {
     transition-delay: 0.8s;
   }
+}
+
+//서브페이지
+
+.project-detail__thumbnail {
+  opacity: 0;
+  transform: translateX(-400px) translateY(0);
+}
+.project-detail__info {
+  .project-detail__label,
+  .project-detail__title,
+  .project-detail__meta {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  .project-detail__summary p {
+    opacity: 0;
+    transform: translateY(200px);
+  }
+}
+
+.project-detail__thumbnail.is-visible {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+  transition:
+    opacity 1.2s ease,
+    transform 0.6s ease;
+}
+.project-detail__info.is-visible {
+  .project-detail__label,
+  .project-detail__title,
+  .project-detail__meta {
+    opacity: 1;
+    transform: translateX(0) translateY(0);
+    transition:
+      opacity 1.2s ease,
+      transform 0.6s ease;
+  }
+  .project-detail__label {
+    transition-delay: 0.2s;
+  }
+  .project-detail__title {
+    transition-delay: 0.3s;
+  }
+  .project-detail__meta {
+    transition-delay: 0.4s;
+  }
+  .project-detail__summary p {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 1.2s ease,
+      transform 0.6s ease;
+    &:nth-child(1) {
+      transition-delay: 0.4s;
+    }
+    &:nth-child(2) {
+      transition-delay: 0.5s;
+    }
+    &:nth-child(3) {
+      transition-delay: 0.6s;
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .project-detail__thumbnail {
+    opacity: 0;
+    transform: translateX(0) translateY(200px);
+  }
+  .project-detail__info {
+    .project-detail__label,
+    .project-detail__title,
+    .project-detail__meta {
+      opacity: 0;
+      transform: translateX(0) translateY(200px);
+    }
+  }
+}
+.project-detail__item > img,
+.project-detail__summary p {
+  opacity: 0;
+  transform: translateY(120px);
+}
+.project-detail__item > img.is-visible,
+.project-detail__summary.is-visible > p {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 1.2s ease,
+    transform 0.6s ease;
+}
+
+.project-detail__summary.is-visible > p:nth-child(2) {
+  transition-delay: 0.2s;
+}
+.project-detail__summary.is-visible > p:nth-child(3) {
+  transition-delay: 0.4s;
+}
+
+.project-detail__more {
+  opacity: 0;
+  transform: translateY(120px);
+}
+.project-detail__more.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 1.2s ease,
+    transform 0.6s ease;
 }
