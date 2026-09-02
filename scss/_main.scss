@@ -498,7 +498,7 @@
     }
     &__item {
       width: 100%;
-      text-align-last: left;
+      text-align: left;
       .mobile-br {
         display: none;
       }
@@ -510,7 +510,7 @@
       dd {
         width: 100%;
         gap: 16px;
-        letter-spacing: -0.03 em;
+        letter-spacing: -0.03em;
         span {
           text-align: left;
           display: block;
@@ -797,13 +797,11 @@
     span {
       font-size: 16px;
       line-height: 28px;
+      height: 56px;
       font-weight: 400;
       color: var(--text-notes-excerpt);
-      display: -webkit-box;
+      display: inline-block;
       overflow: hidden;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      line-clamp: 2;
     }
   }
   &__content > li:hover {
@@ -874,8 +872,7 @@
       span {
         font-size: 15px;
         line-height: 28px;
-        -webkit-line-clamp: 1;
-        line-clamp: 1;
+        height: 28px;
       }
     }
   }
