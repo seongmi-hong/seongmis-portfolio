@@ -63,15 +63,19 @@ $(document).ready(function () {
       entries.forEach((entry) => {
         const $target = $(entry.target);
 
-        if (entry.intersectionRatio >= 0.2) {
+        if (entry.isIntersecting) {
           $target.addClass("is-visible");
-        } else if (entry.intersectionRatio <= 0.001) {
+          return;
+        }
+
+        // 요소가 화면 아래쪽에 있을 때만 초기화
+        if (entry.boundingClientRect.top >= window.innerHeight) {
           $target.removeClass("is-visible");
         }
       });
     },
     {
-      threshold: [0, 0.001, 0.2],
+      threshold: 0,
     },
   );
 
