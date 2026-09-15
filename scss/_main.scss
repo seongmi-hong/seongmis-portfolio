@@ -989,6 +989,17 @@
       display: none;
     }
   }
+  &__links {
+    font-size: 18px;
+    line-height: 24px;
+    color: var(--text-contact-status);
+    margin-top: 20px;
+    display: flex;
+    gap: 12px;
+    a:hover {
+      text-decoration: underline;
+    }
+  }
 }
 [data-theme="dark"] {
   .contact__copy {
@@ -1024,11 +1035,11 @@ footer {
     &__description {
       font-size: 15px;
       line-height: 24px;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       letter-spacing: -0.03em;
     }
     hr {
-      margin-bottom: 36px;
+      margin-bottom: 32px;
     }
     &__email {
       font-size: 20px;
@@ -1041,6 +1052,10 @@ footer {
       background-size: 24px 24px;
       border-radius: 8px;
       flex-wrap: wrap;
+    }
+    &__links {
+      font-size: 15px;
+      margin-top: 12px;
     }
     &__copy:hover {
       background-size: 24px 24px;

@@ -201,7 +201,8 @@
     opacity: 0;
     transform: translateY(120px);
   }
-  .contact__email {
+  .contact__email,
+  .contact__links {
     opacity: 0;
     transform: translateY(60px);
   }
@@ -212,7 +213,8 @@
   .contact__title,
   .contact__description,
   hr,
-  .contact__email {
+  .contact__email,
+  .contact__links {
     opacity: 1;
     transform: translateY(0);
     transition:
@@ -230,6 +232,9 @@
   }
   .contact__email {
     transition-delay: 0.8s;
+  }
+  .contact__links {
+    transition-delay: 1s;
   }
 }
 
